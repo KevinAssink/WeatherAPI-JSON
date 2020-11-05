@@ -23,6 +23,18 @@ function makeAjaxCall(url, methodType){
   });
   return promiseObj;
 }
+function showWeather(weatherString){
+  let weatherObject = JSON.parse(weatherString);
+  let ditWeer =
+      weatherObject.liveweer[0].plaats +
+      "<br>Temperatuur " +
+      weatherObject.liveweer[0].temp + "&#176;C" +
+      "<br>Verwachting " +
+      weatherObject.liveweer[0].verw +
+      "<br>" +
+      weatherObject.liveweer[0].samenv +
+      "<br>"
+}
 
 function errorHandler(statusCode){
   console.log("failed with status", status);
